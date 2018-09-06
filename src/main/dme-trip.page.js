@@ -2,6 +2,10 @@ import CreateLoader from "./create-loader.js";
 
 export default class TripPage {
   constructor() {}
+  hideMessages() {
+    let messages = document.getElementById("messages");
+    messages && messages.parentElement.removeChild(messages);
+  }
   updateElementValue(id, value) {
     let element = document.getElementById(id);
     if (element) {

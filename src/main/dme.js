@@ -1,15 +1,20 @@
 import DMEService from "./dme-service.js";
 import TripPage from "./dme-trip.page.js";
 import AlertPopup from "./alert-popup.js";
+const { href } = window.location;
+console.log(href);
 export default async function MessageListener() {
   const tripPage = new TripPage();
-  if (window.location.href.includes("dmelive.com/Trips/")) {
+  if (href.includes("dmelive.com")) {
     console.log("hey this is the dme site");
     chrome.runtime.onMessage.addListener(async function(
       request,
       sender,
       sendResponse
     ) {
+      if (request.hideMessages === "true") {
+        return tripPage.hideMessages();
+      }
       console.log({ request });
       tripPage.updateForm(request);
       sendResponse({ success: true });

@@ -5,7 +5,7 @@ export default class DMEService {
     customerName = encodeURIComponent(customerName);
     let timeStamp = new Date().getTime();
     let customerData = await Api.get({
-      url: `http://dmelive.com/WS/AutoCompleteCustomer.ashx?q=${customerName}&limit=10&timestamp=${timeStamp}`,
+      url: `https://dmelive.com/WS/AutoCompleteCustomer.ashx?q=${customerName}&limit=10&timestamp=${timeStamp}`,
       responseType: "text"
     });
     if (customerData.length === 0) {
@@ -21,14 +21,14 @@ export default class DMEService {
   }
   static getUserInfo(customerId) {
     return fetch(
-      "http://dmelive.com/WS/CustomerManager.asmx/GetCustomerForTrip",
+      "https://dmelive.com/WS/CustomerManager.asmx/GetCustomerForTrip",
       {
         credentials: "include",
         headers: {
           Accept: "application/json, text/javascript, */*; q=0.01",
           "Content-Type": "application/json; charset=UTF-8"
         },
-        referrer: "http://dmelive.com/Trips/mgmttrips.aspx",
+        referrer: "https://dmelive.com/Trips/mgmttrips.aspx",
         referrerPolicy: "no-referrer-when-downgrade",
         body: '{"pintCustomerID":' + customerId + "}",
         method: "POST",
@@ -41,7 +41,7 @@ export default class DMEService {
       return response.json();
     });
     // return Api.post({
-    //   url: "http://dmelive.com/WS/CustomerManager.asmx/GetCustomerForTrip",
+    //   url: "https://dmelive.com/WS/CustomerManager.asmx/GetCustomerForTrip",
     //   body: JSON.stringify({
     //     pintCustomerID: customerId
     //   })

@@ -22,7 +22,7 @@ export default class Api {
         credentials: "include",
         method: "POST",
         mode: "cors",
-        referrer: "http://dmelive.com/Trips/mgmttrips.aspx",
+        referrer: "https://dmelive.com/Trips/mgmttrips.aspx",
         referrerPolicy: "no-referrer-when-downgrade",
         headers: {
           "Content-Type": "application/json, text/javascript, */*; q=0.01"
@@ -36,7 +36,7 @@ export default class Api {
       window.fetch(url, {
         credentials: "include",
         mode: "cors",
-        referrer: "http://dmelive.com/Trips/mgmttrips.aspx",
+        referrer: "https://dmelive.com/Trips/mgmttrips.aspx",
         referrerPolicy: "no-referrer-when-downgrade"
       }),
       responseType
