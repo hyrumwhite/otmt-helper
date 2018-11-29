@@ -20,6 +20,10 @@
       "matches": ["<all_urls>"],
       "js": ["dist/content.module.js"],
       "css": ["dist/main.css"]
+    },
+    {
+      "matches": ["*://*.natmedtrans.com/*"],
+      "js": ["dist/natmedtrans.js"]
     }
   ],
   "permissions": [
@@ -32,8 +36,7 @@
     "unlimitedStorage",
     "https://ajax.googleapis.com/"
   ],
-  "content_security_policy":
-    "script-src 'self' https://www.google-analytics.com; object-src 'self'",
+  "content_security_policy": "script-src 'self' https://www.google-analytics.com; object-src 'self'",
   "commands": {
     "toggle-workbench": {
       "suggested_key": {
