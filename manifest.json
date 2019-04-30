@@ -38,7 +38,7 @@
   ],
   "content_security_policy": "script-src 'self' https://www.google-analytics.com; object-src 'self'",
   "commands": {
-    "toggle-workbench": {
+    "copy-data": {
       "suggested_key": {
         "default": "Ctrl+Shift+Space"
       },
